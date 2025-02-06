@@ -80,6 +80,7 @@ function TaskPage() {
   }
 
   useEffect(() => {
+    // const token = JSON.parse(sessionStorage.getItem("token"));
     if (user !== null) fetchListofTask();
   }, [user]);
 
