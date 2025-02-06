@@ -63,7 +63,7 @@ const registeruser = async (req, res, next) => {
 
         res.cookie("token", token, {
           withCredentials: true,
-          httpOnly: false,
+          httpOnly: true,
         });
 
         res.status(201).json({
@@ -121,7 +121,7 @@ const loginUser = async (req, res, next) => {
 
     res.cookie("token", token, {
       withCredentials: true,
-      httpOnly: false,
+      httpOnly: true,
     });
 
     res.status(201).json({
@@ -142,7 +142,7 @@ const loginUser = async (req, res, next) => {
 const LogOutUser = async (req, res, next) => {
   res.cookie("token", "", {
     withCredentials: true,
-    httpOnly: false,
+    httpOnly: true,
   });
 
   return res.status(200).json({
